@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.online_pharmacies.mapper.MedicationtypeMapper">
+    <select id="pageC" resultType="com.online_pharmacies.entity.Medication">
+        SELECT mc.*
+        FROM medicationtype mt
+                 JOIN drugdrugtype ddt ON mt.type_id = ddt.type_f_id
+                 JOIN medication mc ON ddt.medication_f_id = mc.id
+            ${ew.customSqlSegment}
+    </select>
+
+    <select id="pageType" resultType="com.online_pharmacies.entity.Medicationtype">
+
+        select * from medicationtype ${ew.customSqlSegment}
+    </select>
+</mapper>

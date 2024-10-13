@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.online_pharmacies.mapper.OrdersMapper">
+    <update id="updateStatus">
+        UPDATE orders
+        SET status = '待发货'
+        WHERE order_id = #{id};
+    </update>
+    <update id="updates">
+        UPDATE orders
+        SET status = '待评价'
+        WHERE order_id = #{id};
+    </update>
+    <update id="send">
+        UPDATE orders
+        SET status = '待收货'
+        WHERE order_id = #{id};
+    </update>
+    <select id="listById" resultType="com.online_pharmacies.entity.Orders">
+        select * from orders where user_id= #{userId};
+    </select>
+    <select id="listType" resultType="com.online_pharmacies.entity.Orders">
+        select * from orders where user_id= #{userId} and status = #{status};
+    </select>
+    <select id="listAddress" resultType="com.online_pharmacies.entity.UserAddress">
+        SELECT ua.*
+        FROM user_address ua
+                 JOIN orders ON orders.useraddress_id = ua.id
+        WHERE orders.order_id = #{orderId}
+    </select>
+    <select id="pageC" resultType="com.online_pharmacies.entity.Orders">
+        select * from orders ${ew.customSqlSegment}
+    </select>
+</mapper>

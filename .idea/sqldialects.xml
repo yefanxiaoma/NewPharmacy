@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/Online_pharmacies/src/main/resources/mapper/DrugdrugtypeMapper.xml" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/Online_pharmacies/src/main/resources/mapper/MedicationMapper.xml" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/Online_pharmacies/src/main/resources/mapper/MedicationtypeMapper.xml" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/Online_pharmacies/src/main/resources/mapper/MenuMapper.xml" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/Online_pharmacies/src/main/resources/mapper/OrderItemsMapper.xml" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/Online_pharmacies/src/main/resources/mapper/OrdersMapper.xml" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/Online_pharmacies/src/main/resources/mapper/ShoppingcartMapper.xml" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/Online_pharmacies/src/main/resources/mapper/UserAddressMapper.xml" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/Online_pharmacies/src/main/resources/mapper/UserMapper.xml" dialect="GenericSQL" />
+  </component>
+</project>

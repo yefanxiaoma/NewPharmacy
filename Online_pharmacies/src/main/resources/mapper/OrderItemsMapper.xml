@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.online_pharmacies.mapper.OrderItemsMapper">
+    <select id="listDetail" resultType="com.online_pharmacies.entity.OrderDetail">
+        SELECT mc.name, mc.image,oi.quantity, oi.price, oi.total_price
+        FROM medication mc
+                 JOIN order_items oi ON oi.medication_id = mc.id
+                 JOIN orders ON orders.order_id = oi.order_id
+        WHERE orders.order_id = #{orderId};
+    </select>
+</mapper>

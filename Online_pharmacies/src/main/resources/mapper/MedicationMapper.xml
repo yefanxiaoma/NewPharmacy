@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.online_pharmacies.mapper.MedicationMapper">
+    <select id="pageC" resultType="com.online_pharmacies.entity.Medication">
+        select * from medication ${ew.customSqlSegment}
+    </select>
+    <select id="listById" resultType="com.online_pharmacies.entity.Medication">
+        select * from medication where id = #{medicationId}
+    </select>
+        <select id="hotPage" resultType="com.online_pharmacies.entity.Medication">
+            SELECT
+                m.*
+            FROM
+                order_items oi
+                    JOIN
+                medication m ON oi.medication_id = m.id
+            GROUP BY
+                m.id
+            ORDER BY
+                SUM(oi.quantity) DESC
+        </select>
+</mapper>
