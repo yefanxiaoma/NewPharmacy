@@ -67,4 +67,9 @@ public class OrdersServiceImpl extends ServiceImpl<OrdersMapper, Orders> impleme
         return ordersMapper.send(id);
     }
 
+    @Override
+    public List<Orders> listNumber(Orders orders) {
+        return ordersMapper.listNumber(orders);
+    }
+
 }

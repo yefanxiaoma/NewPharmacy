@@ -31,4 +31,7 @@
     <select id="pageC" resultType="com.online_pharmacies.entity.Orders">
         select * from orders ${ew.customSqlSegment}
     </select>
+    <select id="listNumber" resultType="com.online_pharmacies.entity.Orders">
+        select * from orders where order_id = #{orderId}
+    </select>
 </mapper>

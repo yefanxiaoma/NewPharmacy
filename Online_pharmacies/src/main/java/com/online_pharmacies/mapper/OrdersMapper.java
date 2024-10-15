@@ -36,4 +36,6 @@ public interface OrdersMapper extends BaseMapper<Orders> {
     IPage<Orders> pageC(IPage<Orders> page, @Param(Constants.WRAPPER) Wrapper<Orders> wrapper);
 
     boolean send(String id);
+
+    List<Orders> listNumber(Orders orders);
 }

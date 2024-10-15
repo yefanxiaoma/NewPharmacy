@@ -60,6 +60,13 @@ public class OrdersController {
         // 返回结果
         return Result.success(list);
     }
+    @PostMapping("/listnumber")
+    public Result listnumber(@RequestBody Orders orders) {
+
+        List<Orders> list = ordersService.listNumber(orders);
+        // 返回结果
+        return Result.success(list);
+    }
     @PostMapping("/listType")
     public Result listType(@RequestBody Orders orders) {
 
@@ -92,5 +99,9 @@ public class OrdersController {
         }
         IPage<Orders> result = ordersService.pageC(page,lambdaQueryWrapper);
         return Result.success(result.getRecords(), result.getTotal());
+    }
+    @PostMapping("changeAddress")
+    public Result changeAddress(@RequestBody Orders orders){
+       return ordersService.updateById(orders)?Result.success():Result.fail();
     }
 }

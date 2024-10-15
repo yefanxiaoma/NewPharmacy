@@ -45,4 +45,7 @@ public class Orders implements Serializable {
 
     @TableField("useraddress_id")
     private Integer useraddressId;
+
+    @TableField("number")
+    private Integer number;
 }

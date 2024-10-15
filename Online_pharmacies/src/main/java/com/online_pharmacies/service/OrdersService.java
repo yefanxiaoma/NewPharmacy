@@ -33,4 +33,6 @@ public interface OrdersService extends IService<Orders> {
     IPage<Orders> pageC(Page<Orders> page, LambdaQueryWrapper<Orders> lambdaQueryWrapper);
 
     boolean send(String id);
+
+    List<Orders> listNumber(Orders orders);
 }
